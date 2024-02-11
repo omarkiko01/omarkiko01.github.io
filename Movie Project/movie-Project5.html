@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <link rel="stylesheet" href="css/jquery.flipster.min.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.flipster.min.js"></script>
+
+    <link rel="stylesheet" href="css/project5.css" />
+    <style>
+        video {
+            max-width: 100%;
+            /* Ensure the video scales to its container */
+            width: 100%;
+            /* Have it take up the available width while respecting max-width */
+            /* Maintain aspect ratio */
+            object-fit: cover;
+            /* Optional - Controls how the video fills the container */
+            position: absolute;
+
+            min-height: 100vh;
+
+            z-index: -1;
+            inset: 0;
+        }
+    </style>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+</style>
+
+<body>
+    <header class="w-100 position-absolute z-5">
+        <nav class="navbar navbar-expand-lg py-2  ">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white ms-3" href="#">Navbar scroll</a>
+                <button class="navbar-toggler mb-4 me-4" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon  text-white bg-light mb-5"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll " style="--bs-scroll-height: 100px;">
+                        <li class="nav-item ">
+                            <a class="nav-link active text-white" aria-current="page" href="project5.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Movies</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex me-3" role="search">
+                        <input class="form-control me-2 my-auto" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn text-white " type="submit">Search</button>
+                    </form>
+
+                    <ul class="navbar-nav   navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="login-project5.html"> <button
+                                    class="signupBtn ">SignUp/In
+                                    <span class="arrow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"
+                                            fill="rgb(183, 128, 255)">
+                                            <path
+                                                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z">
+                                            </path>
+                                        </svg>
+                                    </span>
+
+                                </button>
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ////////////// -->
+    <main class=" my-auto d-flex " style=" height: 100vh; max-width: 100%; width: 100%;">
+        <div class="my-auto d-flex flex-column text-start ms-4  w-100 ">
+            <h1 class="text-white" style="font-family: 'Black Ops One', system-ui;">Enjoy watching </h1>
+            <h1 class="text-white" style="font-family: 'Black Ops One', system-ui;">Your Favorite
+                <span class="ms-2" style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;"> Movies
+                </span>
+            </h1>
+            <h1 class="text-white" style="font-family: 'Black Ops One', system-ui;">In high Quality</h1>
+            <h1 class="text-white" style="font-family: 'Black Ops One', system-ui;">And For Free</h1>
+            <p class="text-white text-start" style="font-family: 'Black Ops One', system-ui;"> Sign Up To Access Our
+                Website Easily</p>
+            <div class="">
+                <a class="nav-link active text-white" href="login-project5.html"> <button class="signupBtn ">SignUp
+                        <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"
+                                fill="rgb(183, 128, 255)">
+                                <path
+                                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z">
+                                </path>
+                            </svg>
+                        </span>
+
+                    </button>
+
+                </a>
+
+            </div>
+        </div>
+        <video autoplay muted loop id="myVideo">
+            <source src="videos/videoplayback.webm" type="video/webm">
+        </video>
+    </main>
+    <!-- //////////////// /////////////////////////////////////////////////////////////////////////-->
+
+    <section class="sec1 ">
+        <div class="d-flex  py-5 mt-2 px-5 mb-2">
+            <div class="d-flex  ">
+                <div style="width: 5px;height: 50px; background-color:rgb(0, 195, 255); "></div>
+                <h1 class="text-start text-white ms-2"> Popular Movies</h1>
+            </div>
+            <div class="row d-flex  ms-auto w-50 ">
+                <div class=" row d-flex justify-content-around    " style="max-width: 100%;">
+                    <div style="max-width: 9rem; ">
+                        <button class="btn-watch  px-2  mt-2 py-2   fw-bold ">Adventure</button>
+                    </div>
+                    <div style="max-width: 9rem;">
+                        <button class="btn-watch mt-2  px-4   py-2   fw-bold">Action</button>
+                    </div>
+                    <div style="max-width: 9rem; ">
+                        <button class="btn-watch mt-2  px-4   py-2   fw-bold">Crime</button>
+                    </div>
+                    <div style="max-width: 9rem; ">
+                        <button class="btn-watch mt-2 px-4   py-2   fw-bold ">Honor</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <article id="demo-flat" class="demo ">
+
+            <div id="flat">
+                <ul>
+                    <li data-flip-title="Red">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/millie-bobby-brown-as-elodie-in-damsel-ve-7680x4320.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">Damsel
+                                    </p>
+                                    <p class="mx-auto  fw-bold">100 H</p>
+                                    <p class="ms-auto fw-bold ">5.6</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold">Crime</p>
+                                    <button class="ms-auto btn-watch px-3 mb-3  py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+                    </li>
+                    <li data-flip-title="Razzmatazz" data-flip-category="Purples">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/black-manta-in-aquaman-and-the-lost-kingdom-poster-vd-7680x4320.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">Black
+                                        Manta
+                                    </p>
+                                    <p class="mx-auto  fw-bold">95 H</p>
+                                    <p class="ms-auto fw-bold ">7.6</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold">Adventure</p>
+                                    <button class="ms-auto px-3 mb-3 btn-watch py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+                    </li>
+                    <li data-flip-title="Deep Lilac" data-flip-category="Purples">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/blue-beetle-no-spoiler-o0-7680x4320.jpg" class="card-img-top" alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">Blue
+                                        Beetle
+                                    </p>
+                                    <p class="mx-auto  fw-bold">80 H</p>
+                                    <p class="ms-auto fw-bold ">6.9</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold">Action</p>
+                                    <button class="ms-auto px-3 mb-3 btn-watch py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+
+
+                    </li>
+                    <li data-flip-title="Daisy Bush" data-flip-category="Purples">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/wonder-woman-diana-prince-unleashed-sd-7680x4320.jpg" class="card-img-top"
+                                alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">Wonder
+                                        Woman
+                                    </p>
+                                    <p class="mx-auto  fw-bold">88 H</p>
+                                    <p class="ms-auto fw-bold ">7.1</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold"> Action</p>
+                                    <button class="ms-auto px-3 mb-3 btn-watch py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+                    </li>
+                    <li data-flip-title="Cerulean Blue" data-flip-category="Blues">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/meg-2-10k-jz-7680x4320.jpg" class="card-img-top" alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">Meg 2
+                                    </p>
+                                    <p class="mx-auto  fw-bold">77 H</p>
+                                    <p class="ms-auto fw-bold ">8.0</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold">Adventure</p>
+                                    <button class="ms-auto px-3 mb-3 btn-watch py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+                    </li>
+                    <li data-flip-title="Dodger Blue" data-flip-category="Blues">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/avatar-the-way-of-water-movie-8k-xe-7680x4320.jpg" class="card-img-top"
+                                alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">Avatar
+                                    </p>
+                                    <p class="mx-auto  fw-bold">90 H</p>
+                                    <p class="ms-auto fw-bold ">9.6</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold">Adventure</p>
+                                    <button class="ms-auto px-3 mb-3 btn-watch py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+                    </li>
+                    <li data-flip-title="Cyan" data-flip-category="Blues">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/morbius-nd-7680x4320.jpg" class="card-img-top" alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">
+                                        Morbius
+                                    </p>
+                                    <p class="mx-auto  fw-bold">100 H</p>
+                                    <p class="ms-auto fw-bold ">4.6</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold">Action</p>
+                                    <button class="ms-auto px-3 mb-3 btn-watch py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+                    </li>
+                    <li data-flip-title="Robin's Egg" data-flip-category="Blues">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/andrewgarfield-spiderman-no-way-home-1b-7680x4320.jpg" class="card-img-top"
+                                alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">
+                                        Spiderman
+                                    </p>
+                                    <p class="mx-auto  fw-bold">55 H</p>
+                                    <p class="ms-auto fw-bold ">8.0</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold">Action</p>
+                                    <button class="ms-auto px-3 mb-3 btn-watch py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+                    </li>
+                    <li data-flip-title="Deep Sea" data-flip-category="Greens">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/scream-ye-7680x4320.jpg" class="card-img-top" alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">Scream
+                                    </p>
+                                    <p class="mx-auto  fw-bold">76 H</p>
+                                    <p class="ms-auto fw-bold ">6.9</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold">Honor</p>
+                                    <button class="ms-auto px-3 mb-3 btn-watch py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+                    </li>
+                    <li data-flip-title="Apple" data-flip-category="Greens">
+                        <div class="card" style="width: 20rem; border: 1px solid rgb(0, 217, 255);">
+                            <img src="images/jolt-10k-hb-7680x4320.jpg" class="card-img-top" alt="...">
+                            <div class="px-4  bg-black w-100">
+                                <div class="card-text d-flex pt-3 ">
+                                    <p class="text-start fs-5 "
+                                        style="color: rgb(0, 195, 255); font-family: 'Black Ops One', system-ui;">Jolt
+                                    </p>
+                                    <p class="mx-auto  fw-bold">110 H</p>
+                                    <p class="ms-auto fw-bold ">8.6</p>
+                                </div>
+                                <div class=" d-flex">
+                                    <p class="me-auto fw-bold">Crime</p>
+                                    <button class="ms-auto px-3 mb-3 btn-watch py-1  fw-bold">Watch Now</button>
+                                </div>
+                                <span class="top"></span>
+                                <span class="right"></span>
+                                <span class="bottom"></span>
+                                <span class="left"></span>
+                            </div>
+
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <script>
+                var flat = $("#flat").flipster({
+                    style: 'flat',
+                    spacing: -0.25
+                });
+            </script>
+
+            <pre class="code"></pre>
+
+        </article>
+    </section>
+    <script src="js/project5.js"></script>
+</body>
+
+</html>
